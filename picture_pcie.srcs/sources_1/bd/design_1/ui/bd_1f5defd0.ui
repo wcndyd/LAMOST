@@ -1,0 +1,71 @@
+{
+   "ActiveEmotionalView":"Default View",
+   "Default View_ScaleFactor":"0.866972",
+   "Default View_TopLeft":"732,231",
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 7.0r6  2020-01-29 bk=1.5227 VDI=41 GEI=36 GUI=JA:10.0 non-TLS
+#  -string -flagsOSRD
+preplace port pcie_ref -pg 1 -lvl 0 -x -20 -y 220 -defaultsOSRD
+preplace port pcie_mgt -pg 1 -lvl 8 -x 2910 -y 230 -defaultsOSRD
+preplace port pcie_rst_n -pg 1 -lvl 0 -x -20 -y 290 -defaultsOSRD
+preplace port lnk_up_led -pg 1 -lvl 8 -x 2910 -y 1170 -defaultsOSRD
+preplace inst Frame_Arbiter_0 -pg 1 -lvl 7 -x 2700 -y 630 -defaultsOSRD
+preplace inst axi_gpio_0 -pg 1 -lvl 6 -x 2280 -y 110 -defaultsOSRD
+preplace inst axi_interconnect_0 -pg 1 -lvl 7 -x 2700 -y 1050 -defaultsOSRD
+preplace inst axi_interconnect_1 -pg 1 -lvl 7 -x 2700 -y 380 -defaultsOSRD
+preplace inst axi_mcdma_0 -pg 1 -lvl 6 -x 2280 -y 710 -defaultsOSRD
+preplace inst lsp_debug_0 -pg 1 -lvl 5 -x 1840 -y 1140 -defaultsOSRD
+preplace inst proc_sys_reset_0 -pg 1 -lvl 6 -x 2280 -y 1070 -defaultsOSRD
+preplace inst ps8_0_axi_periph -pg 1 -lvl 5 -x 1840 -y 670 -defaultsOSRD
+preplace inst result_tranfer -pg 1 -lvl 6 -x 2280 -y 390 -defaultsOSRD
+preplace inst rst_ps8_0_99M -pg 1 -lvl 4 -x 1330 -y 1050 -defaultsOSRD
+preplace inst zynq_ultra_ps_e_0 -pg 1 -lvl 4 -x 1330 -y 630 -defaultsOSRD
+preplace inst xdma_0 -pg 1 -lvl 2 -x 490 -y 280 -defaultsOSRD
+preplace inst axi_smc -pg 1 -lvl 3 -x 820 -y 480 -defaultsOSRD
+preplace inst axi_smc_1 -pg 1 -lvl 3 -x 820 -y 310 -defaultsOSRD
+preplace inst util_ds_buf_0 -pg 1 -lvl 1 -x 160 -y 270 -defaultsOSRD
+preplace inst h2c_intr_0 -pg 1 -lvl 4 -x 1330 -y 290 -defaultsOSRD
+preplace netloc ARESETN_1 1 6 1 2520 350n
+preplace netloc Frame_Arbiter_0_data_n 1 4 4 1670 900 NJ 900 NJ 900 2850
+preplace netloc Frame_Arbiter_0_data_valid_n 1 4 4 1680 910 N 910 NJ 910 2860
+preplace netloc axi_gpio_0_ip2intc_irpt 1 3 4 1030 920 NJ 920 NJ 920 2470
+preplace netloc light_spot_positioni_0_end_flag 1 5 1 2080 420n
+preplace netloc light_spot_positioni_0_ready_o 1 5 2 2020 930 2530J
+preplace netloc lsp_debug_0_data_o 1 5 1 2050 360n
+preplace netloc lsp_debug_0_data_valid_o 1 5 1 2010 380n
+preplace netloc rst_ps8_0_99M_peripheral_aresetn 1 4 3 1660 530 2070 500 2550
+preplace netloc zynq_ultra_ps_e_0_pl_clk0 1 3 4 1000 500 1650 500 2060 510 2540
+preplace netloc zynq_ultra_ps_e_0_pl_clk1 1 3 4 1020 760 1630 970 2040 970 2510
+preplace netloc zynq_ultra_ps_e_0_pl_resetn0 1 3 3 1030 950 1640 960 2030J
+preplace netloc xdma_0_axi_aclk 1 2 2 680 230 970
+preplace netloc xdma_0_axi_aresetn 1 2 2 640 390 980
+preplace netloc util_ds_buf_0_IBUF_DS_ODIV2 1 1 1 330 250n
+preplace netloc util_ds_buf_0_IBUF_OUT 1 1 1 310 260n
+preplace netloc sys_rst_n_0_1 1 0 2 10J 200 320J
+preplace netloc xdma_0_user_lnk_up 1 2 6 650J 180 NJ 180 NJ 180 2050J 210 NJ 210 2880J
+preplace netloc result_tranfer_flag 1 3 4 1030 490 NJ 490 NJ 490 2460
+preplace netloc h2c_intr_0_trigger_out 1 4 3 N 280 NJ 280 2460
+preplace netloc h2c_intr_0_xdma_irq_req 1 1 4 340 130 NJ 130 NJ 130 1650
+preplace netloc result_tranfer_cnt 1 3 4 1020 20 NJ 20 NJ 20 2480
+preplace netloc axi_mcdma_0_M_AXIS_MM2S 1 6 1 2530 600n
+preplace netloc ps8_0_axi_periph_M00_AXI 1 5 1 2020 660n
+preplace netloc axi_interconnect_0_M00_AXI 1 3 5 990 10 NJ 10 NJ 10 NJ 10 2870
+preplace netloc axi_mcdma_0_M_AXI_MM2S 1 6 1 2490 600n
+preplace netloc zynq_ultra_ps_e_0_M_AXI_HPM0_LPD 1 4 1 1680 590n
+preplace netloc axi_smc_M00_AXI 1 3 1 960 480n
+preplace netloc xdma_0_M_AXI_LITE 1 2 1 660 210n
+preplace netloc axi_interconnect_1_M00_AXI 1 3 5 1010 190 NJ 190 2010J 200 NJ 200 2850
+preplace netloc ps8_0_axi_periph_M01_AXI 1 5 1 2000 90n
+preplace netloc CLK_IN_D_0_1 1 0 1 0J 220n
+preplace netloc xdma_0_M_AXI 1 2 1 670 190n
+preplace netloc axi_mcdma_0_M_AXI_SG 1 6 1 2490 290n
+preplace netloc xdma_0_pcie_mgt 1 2 6 640J 170 NJ 170 1660J 230 NJ 230 NJ 230 NJ
+preplace netloc result_tranfer_M_AXI_S2MM 1 6 1 2500 310n
+preplace netloc axi_smc_1_M00_AXI 1 3 1 960 250n
+levelinfo -pg 1 -20 160 490 820 1330 1840 2280 2700 2910
+pagesize -pg 1 -db -bbox -sgen -140 0 3030 1310
+"
+}
+{
+   "da_axi4_cnt":"6"
+}

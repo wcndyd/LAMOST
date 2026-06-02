@@ -1,0 +1,2 @@
+#TargetFrameworkVersion=v4.5:PlatformToolSet=WindowsKernelModeDriver10.0:EnableManagedIncrementalBuild=false:VCToolArchitecture=Native32Bit
+Win7_Release|x64|C:\mi\01_pcie_driver_build\xdma_driver_win_src_2017\|
