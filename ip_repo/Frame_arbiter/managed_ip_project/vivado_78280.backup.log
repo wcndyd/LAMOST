@@ -1,0 +1,55 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Sun Jan 11 10:26:43 2026
+# Process ID: 78280
+# Current directory: D:/FPGA_prj/ip_repo/Frame_arbiter/managed_ip_project
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent164688 D:\FPGA_prj\ip_repo\Frame_arbiter\managed_ip_project\managed_ip_project.xpr
+# Log file: D:/FPGA_prj/ip_repo/Frame_arbiter/managed_ip_project/vivado.log
+# Journal file: D:/FPGA_prj/ip_repo/Frame_arbiter/managed_ip_project\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/FPGA_prj/ip_repo/Frame_arbiter/managed_ip_project/managed_ip_project.xpr
+WARNING: [filemgmt 56-3] Default IP Output Path : Could not find the directory 'D:/FPGA_prj/ip_repo/Frame_arbiter/managed_ip_project/managed_ip_project.gen/sources_1'.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2020.2/data/ip'.
+ipx::open_ipxact_file {D:\FPGA_prj\ip_repo\Frame_arbiter\ip\component.xml}
+ipx::infer_core -vendor xilinx.com -library user -taxonomy /UserIP D:/FPGA_prj/ip_repo/Frame_arbiter/ip
+WARNING: [Ipptcl 7-1467] The compile order has been set manually. This prevents the packager from updating                 it if necessary. If errors related to compile order occur, try enabling automatic                 reordering, or calling package_project with the -force_update_compile_order option
+INFO: [IP_Flow 19-4833] Not packaging DCP derived file 'd:/FPGA_prj/ip_repo/Frame_arbiter/ip/src/fifo_MM2S/fifo_MM2S_sim_netlist.v'.
+INFO: [IP_Flow 19-4833] Not packaging DCP derived file 'd:/FPGA_prj/ip_repo/Frame_arbiter/ip/src/fifo_MM2S/fifo_MM2S_sim_netlist.vhdl'.
+INFO: [IP_Flow 19-4833] Not packaging DCP derived file 'd:/FPGA_prj/ip_repo/Frame_arbiter/ip/src/fifo_MM2S/fifo_MM2S_stub.v'.
+INFO: [IP_Flow 19-4833] Not packaging DCP derived file 'd:/FPGA_prj/ip_repo/Frame_arbiter/ip/src/fifo_MM2S/fifo_MM2S_stub.vhdl'.
+INFO: [IP_Flow 19-5107] Inferred bus interface 'core_clk' of definition 'xilinx.com:signal:clock:1.0' (from X_INTERFACE_INFO parameter from HDL file).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'core_clk' of definition 'xilinx.com:signal:clock:1.0' (from 'X_INTERFACE_INFO' attribute).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'FIFO_WRITE' of definition 'xilinx.com:interface:fifo_write:1.0' (from X_INTERFACE_INFO parameter from HDL file).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'FIFO_WRITE' of definition 'xilinx.com:interface:fifo_write:1.0' (from 'X_INTERFACE_INFO' attribute).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'FIFO_READ' of definition 'xilinx.com:interface:fifo_read:1.0' (from X_INTERFACE_INFO parameter from HDL file).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'FIFO_READ' of definition 'xilinx.com:interface:fifo_read:1.0' (from 'X_INTERFACE_INFO' attribute).
+INFO: [IP_Flow 19-4728] Bus Interface 'core_clk': Added interface parameter 'FREQ_HZ' with value '100000000'.
+INFO: [IP_Flow 19-4728] Bus Interface 'core_clk': Added interface parameter 'FREQ_TOLERANCE_HZ' with value '0'.
+INFO: [IP_Flow 19-4728] Bus Interface 'core_clk': Added interface parameter 'PHASE' with value '0.000'.
+INFO: [IP_Flow 19-4728] Bus Interface 'core_clk': Added interface parameter 'INSERT_VIP' with value '0'.
+INFO: [IP_Flow 19-7067] Note that bus interface 'core_clk' has a fixed FREQ_HZ of '100000000'. This value will be respected whenever this IP is instantiated in IP Integrator.
+WARNING: [IP_Flow 19-5661] Bus Interface 'core_clk' does not have any bus interfaces associated with it.
+INFO: [IP_Flow 19-2181] Payment Required is not set for this core.
+INFO: [IP_Flow 19-2187] The Product Guide file is missing.
+INFO: [IP_Flow 19-7067] Note that bus interface 'core_clk' has a fixed FREQ_HZ of '100000000'. This value will be respected whenever this IP is instantiated in IP Integrator.
+WARNING: [IP_Flow 19-5661] Bus Interface 'core_clk' does not have any bus interfaces associated with it.
+INFO: [IP_Flow 19-2181] Payment Required is not set for this core.
+INFO: [IP_Flow 19-2187] The Product Guide file is missing.
+ipx::infer_core: Time (s): cpu = 00:00:09 ; elapsed = 00:00:19 . Memory (MB): peak = 1167.223 ; gain = 23.164
+ipx::edit_ip_in_project -upgrade true -name edit_ip_project -directory D:/FPGA_prj/ip_repo/Frame_arbiter/managed_ip_project/managed_ip_project.tmp d:/FPGA_prj/ip_repo/Frame_arbiter/ip/component.xml
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2020.2/data/ip'.
+INFO: [IP_Flow 19-795] Syncing license key meta-data
+ipx::current_core d:/FPGA_prj/ip_repo/Frame_arbiter/ip/component.xml
+update_compile_order -fileset sources_1
+close_project
+exit
+INFO: [Common 17-206] Exiting Vivado at Sun Jan 11 10:30:03 2026...

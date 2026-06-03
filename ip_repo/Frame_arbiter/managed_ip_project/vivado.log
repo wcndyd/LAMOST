@@ -1,0 +1,52 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Sun Jan 11 10:55:58 2026
+# Process ID: 34040
+# Current directory: D:/FPGA_prj/ip_repo/Frame_arbiter/managed_ip_project
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent71380 D:\FPGA_prj\ip_repo\Frame_arbiter\managed_ip_project\managed_ip_project.xpr
+# Log file: D:/FPGA_prj/ip_repo/Frame_arbiter/managed_ip_project/vivado.log
+# Journal file: D:/FPGA_prj/ip_repo/Frame_arbiter/managed_ip_project\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/FPGA_prj/ip_repo/Frame_arbiter/managed_ip_project/managed_ip_project.xpr
+WARNING: [filemgmt 56-3] Default IP Output Path : Could not find the directory 'D:/FPGA_prj/ip_repo/Frame_arbiter/managed_ip_project/managed_ip_project.gen/sources_1'.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2020.2/data/ip'.
+ipx::open_ipxact_file {D:\FPGA_prj\ip_repo\Frame_arbiter\ip\component.xml}
+ipx::update_checksums [ipx::current_core]
+ipx::save_core [ipx::current_core]
+set_property core_revision 4 [ipx::current_core]
+ipx::create_xgui_files [ipx::current_core]
+ipx::update_checksums [ipx::current_core]
+ipx::check_integrity [ipx::current_core]
+WARNING: [IP_Flow 19-3157] Bus Interface 'rst_n': Bus parameter POLARITY is ACTIVE_LOW but port 'rst_n' is not *resetn - please double check the POLARITY setting.
+WARNING: [IP_Flow 19-5661] Bus Interface 'clk' does not have any bus interfaces associated with it.
+WARNING: [IP_Flow 19-3158] Bus Interface 'MM2S_s': FREQ_HZ bus parameter missing from AXI interface when interface is not associated to a clock.
+INFO: [IP_Flow 19-2181] Payment Required is not set for this core.
+INFO: [IP_Flow 19-2187] The Product Guide file is missing.
+INFO: [Ipptcl 7-1486] check_integrity: Integrity check passed.
+ipx::save_core [ipx::current_core]
+set_property  ip_repo_paths  d:/FPGA_prj/ip_repo/Frame_arbiter/ip [current_project]
+update_ip_catalog
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/FPGA_prj/ip_repo/Frame_arbiter/ip'.
+set_property core_revision 5 [ipx::current_core]
+ipx::create_xgui_files [ipx::current_core]
+ipx::update_checksums [ipx::current_core]
+ipx::check_integrity [ipx::current_core]
+WARNING: [IP_Flow 19-3157] Bus Interface 'rst_n': Bus parameter POLARITY is ACTIVE_LOW but port 'rst_n' is not *resetn - please double check the POLARITY setting.
+WARNING: [IP_Flow 19-5661] Bus Interface 'clk' does not have any bus interfaces associated with it.
+WARNING: [IP_Flow 19-3158] Bus Interface 'MM2S_s': FREQ_HZ bus parameter missing from AXI interface when interface is not associated to a clock.
+INFO: [IP_Flow 19-2181] Payment Required is not set for this core.
+INFO: [IP_Flow 19-2187] The Product Guide file is missing.
+INFO: [Ipptcl 7-1486] check_integrity: Integrity check passed.
+ipx::save_core [ipx::current_core]
+update_ip_catalog -rebuild -repo_path d:/FPGA_prj/ip_repo/Frame_arbiter/ip
+INFO: [IP_Flow 19-725] Reloaded user IP repository 'd:/FPGA_prj/ip_repo/Frame_arbiter/ip'
+exit
+INFO: [Common 17-206] Exiting Vivado at Sun Jan 11 10:58:08 2026...

@@ -1,0 +1,19 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Sun Jan 11 10:26:43 2026
+# Process ID: 78280
+# Current directory: D:/FPGA_prj/ip_repo/Frame_arbiter/managed_ip_project
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent164688 D:\FPGA_prj\ip_repo\Frame_arbiter\managed_ip_project\managed_ip_project.xpr
+# Log file: D:/FPGA_prj/ip_repo/Frame_arbiter/managed_ip_project/vivado.log
+# Journal file: D:/FPGA_prj/ip_repo/Frame_arbiter/managed_ip_project\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/FPGA_prj/ip_repo/Frame_arbiter/managed_ip_project/managed_ip_project.xpr
+ipx::open_ipxact_file {D:\FPGA_prj\ip_repo\Frame_arbiter\ip\component.xml}
+ipx::infer_core -vendor xilinx.com -library user -taxonomy /UserIP D:/FPGA_prj/ip_repo/Frame_arbiter/ip
+ipx::edit_ip_in_project -upgrade true -name edit_ip_project -directory D:/FPGA_prj/ip_repo/Frame_arbiter/managed_ip_project/managed_ip_project.tmp d:/FPGA_prj/ip_repo/Frame_arbiter/ip/component.xml
+ipx::current_core d:/FPGA_prj/ip_repo/Frame_arbiter/ip/component.xml
+update_compile_order -fileset sources_1
+close_project

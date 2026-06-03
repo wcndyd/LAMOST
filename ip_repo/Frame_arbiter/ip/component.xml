@@ -1,0 +1,1015 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spirit:component xmlns:xilinx="http://www.xilinx.com" xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <spirit:vendor>xilinx.com</spirit:vendor>
+  <spirit:library>user</spirit:library>
+  <spirit:name>Frame_Arbiter</spirit:name>
+  <spirit:version>1.0</spirit:version>
+  <spirit:busInterfaces>
+    <spirit:busInterface>
+      <spirit:name>rst_n</spirit:name>
+      <spirit:busType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="reset" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="reset_rtl" spirit:version="1.0"/>
+      <spirit:slave/>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>RST</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>rst_n</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+      <spirit:parameters>
+        <spirit:parameter>
+          <spirit:name>POLARITY</spirit:name>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.RST_N.POLARITY" spirit:choiceRef="choice_list_9d8b0d81">ACTIVE_LOW</spirit:value>
+        </spirit:parameter>
+      </spirit:parameters>
+    </spirit:busInterface>
+    <spirit:busInterface>
+      <spirit:name>clk</spirit:name>
+      <spirit:busType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="clock" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="clock_rtl" spirit:version="1.0"/>
+      <spirit:slave/>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>CLK</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>clk</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+      <spirit:parameters>
+        <spirit:parameter>
+          <spirit:name>FREQ_HZ</spirit:name>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.CLK.FREQ_HZ"/>
+        </spirit:parameter>
+        <spirit:parameter>
+          <spirit:name>ASSOCIATED_BUSIF</spirit:name>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.CLK.ASSOCIATED_BUSIF">MM2S_s</spirit:value>
+        </spirit:parameter>
+      </spirit:parameters>
+    </spirit:busInterface>
+    <spirit:busInterface>
+      <spirit:name>MM2S_s</spirit:name>
+      <spirit:busType spirit:vendor="xilinx.com" spirit:library="interface" spirit:name="axis" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="interface" spirit:name="axis_rtl" spirit:version="1.0"/>
+      <spirit:slave/>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>TVALID</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>MM2S_tvalid</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>TDATA</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>MM2S_tdata</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>TDEST</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>MM2S_tdest</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>TREADY</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>MM2S_tready</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+      <spirit:parameters>
+        <spirit:parameter>
+          <spirit:name>FREQ_HZ</spirit:name>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.MM2S_S.FREQ_HZ"/>
+        </spirit:parameter>
+      </spirit:parameters>
+    </spirit:busInterface>
+  </spirit:busInterfaces>
+  <spirit:model>
+    <spirit:views>
+      <spirit:view>
+        <spirit:name>xilinx_anylanguagesynthesis</spirit:name>
+        <spirit:displayName>Synthesis</spirit:displayName>
+        <spirit:envIdentifier>:vivado.xilinx.com:synthesis</spirit:envIdentifier>
+        <spirit:language>Verilog</spirit:language>
+        <spirit:modelName>Frame_Arbiter</spirit:modelName>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_anylanguagesynthesis_xilinx_com_ip_fifo_generator_13_2__ref_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_anylanguagesynthesis_xilinx_com_ip_axis_dwidth_converter_1_1__ref_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_anylanguagesynthesis_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>viewChecksum</spirit:name>
+            <spirit:value>7ec27f49</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>xilinx_anylanguagebehavioralsimulation</spirit:name>
+        <spirit:displayName>Simulation</spirit:displayName>
+        <spirit:envIdentifier>:vivado.xilinx.com:simulation</spirit:envIdentifier>
+        <spirit:language>Verilog</spirit:language>
+        <spirit:modelName>Frame_Arbiter</spirit:modelName>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_anylanguagebehavioralsimulation_xilinx_com_ip_fifo_generator_13_2__ref_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_anylanguagebehavioralsimulation_xilinx_com_ip_axis_dwidth_converter_1_1__ref_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_anylanguagebehavioralsimulation_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>viewChecksum</spirit:name>
+            <spirit:value>7ec27f49</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>xilinx_xpgui</spirit:name>
+        <spirit:displayName>UI Layout</spirit:displayName>
+        <spirit:envIdentifier>:vivado.xilinx.com:xgui.ui</spirit:envIdentifier>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_xpgui_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>viewChecksum</spirit:name>
+            <spirit:value>d78a23cc</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+    </spirit:views>
+    <spirit:ports>
+      <spirit:port>
+        <spirit:name>clk</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>rst_n</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>MM2S_tdata</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.data_W&apos;)) - 1)">255</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic_vector</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>MM2S_tvalid</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>MM2S_tdest</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.tdest_W&apos;)) - 1)">3</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic_vector</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>MM2S_tready</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>CCLC_ready</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.channel_num&apos;)) - 1)">4</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic_vector</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>data_valid_n</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.channel_num&apos;)) - 1)">4</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic_vector</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>data_n</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.channel_num&apos;)) * spirit:decode(id(&apos;MODELPARAM_VALUE.output_W&apos;))) - 1)">39</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic_vector</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>data_count</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.channel_num&apos;)) * 11) - 1)">54</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic_vector</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+    </spirit:ports>
+    <spirit:modelParameters>
+      <spirit:modelParameter xsi:type="spirit:nameValueTypeType" spirit:dataType="integer">
+        <spirit:name>Thres</spirit:name>
+        <spirit:displayName>Thres</spirit:displayName>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.Thres">16</spirit:value>
+      </spirit:modelParameter>
+      <spirit:modelParameter spirit:dataType="integer">
+        <spirit:name>channel_num</spirit:name>
+        <spirit:displayName>Channel Num</spirit:displayName>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.channel_num">5</spirit:value>
+      </spirit:modelParameter>
+      <spirit:modelParameter spirit:dataType="integer">
+        <spirit:name>data_W</spirit:name>
+        <spirit:displayName>Data W</spirit:displayName>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.data_W">256</spirit:value>
+      </spirit:modelParameter>
+      <spirit:modelParameter spirit:dataType="integer">
+        <spirit:name>tdest_W</spirit:name>
+        <spirit:displayName>Tdest W</spirit:displayName>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.tdest_W">4</spirit:value>
+      </spirit:modelParameter>
+      <spirit:modelParameter spirit:dataType="integer">
+        <spirit:name>output_W</spirit:name>
+        <spirit:displayName>Output W</spirit:displayName>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.output_W">8</spirit:value>
+      </spirit:modelParameter>
+    </spirit:modelParameters>
+  </spirit:model>
+  <spirit:choices>
+    <spirit:choice>
+      <spirit:name>choice_list_9d8b0d81</spirit:name>
+      <spirit:enumeration>ACTIVE_HIGH</spirit:enumeration>
+      <spirit:enumeration>ACTIVE_LOW</spirit:enumeration>
+    </spirit:choice>
+  </spirit:choices>
+  <spirit:fileSets>
+    <spirit:fileSet>
+      <spirit:name>xilinx_anylanguagesynthesis_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>src/axis_dwidth_converter_0/axis_dwidth_converter_0.xci</spirit:name>
+        <spirit:userFileType>xci</spirit:userFileType>
+        <spirit:userFileType>CELL_NAME_convert_gen[0].u/axis_dwidth_converter_0</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/fifo_MM2S/fifo_MM2S.xci</spirit:name>
+        <spirit:userFileType>xci</spirit:userFileType>
+        <spirit:userFileType>CELL_NAME_fifo_gen[0].fifo_u/fifo_MM2S</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>Frame_Arbiter.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+        <spirit:userFileType>CHECKSUM_bdba2616</spirit:userFileType>
+      </spirit:file>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_anylanguagesynthesis_xilinx_com_ip_fifo_generator_13_2__ref_view_fileset</spirit:name>
+      <spirit:vendorExtensions>
+        <xilinx:subCoreRef>
+          <xilinx:componentRef xilinx:vendor="xilinx.com" xilinx:library="ip" xilinx:name="fifo_generator" xilinx:version="13.2">
+            <xilinx:mode xilinx:name="create_mode"/>
+          </xilinx:componentRef>
+        </xilinx:subCoreRef>
+      </spirit:vendorExtensions>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_anylanguagesynthesis_xilinx_com_ip_axis_dwidth_converter_1_1__ref_view_fileset</spirit:name>
+      <spirit:vendorExtensions>
+        <xilinx:subCoreRef>
+          <xilinx:componentRef xilinx:vendor="xilinx.com" xilinx:library="ip" xilinx:name="axis_dwidth_converter" xilinx:version="1.1">
+            <xilinx:mode xilinx:name="create_mode"/>
+          </xilinx:componentRef>
+        </xilinx:subCoreRef>
+      </spirit:vendorExtensions>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_anylanguagebehavioralsimulation_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>src/axis_dwidth_converter_0/axis_dwidth_converter_0.xci</spirit:name>
+        <spirit:userFileType>xci</spirit:userFileType>
+        <spirit:userFileType>CELL_NAME_convert_gen[0].u/axis_dwidth_converter_0</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/fifo_MM2S/fifo_MM2S.xci</spirit:name>
+        <spirit:userFileType>xci</spirit:userFileType>
+        <spirit:userFileType>CELL_NAME_fifo_gen[0].fifo_u/fifo_MM2S</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>Frame_Arbiter.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+      </spirit:file>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_anylanguagebehavioralsimulation_xilinx_com_ip_fifo_generator_13_2__ref_view_fileset</spirit:name>
+      <spirit:vendorExtensions>
+        <xilinx:subCoreRef>
+          <xilinx:componentRef xilinx:vendor="xilinx.com" xilinx:library="ip" xilinx:name="fifo_generator" xilinx:version="13.2">
+            <xilinx:mode xilinx:name="create_mode"/>
+          </xilinx:componentRef>
+        </xilinx:subCoreRef>
+      </spirit:vendorExtensions>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_anylanguagebehavioralsimulation_xilinx_com_ip_axis_dwidth_converter_1_1__ref_view_fileset</spirit:name>
+      <spirit:vendorExtensions>
+        <xilinx:subCoreRef>
+          <xilinx:componentRef xilinx:vendor="xilinx.com" xilinx:library="ip" xilinx:name="axis_dwidth_converter" xilinx:version="1.1">
+            <xilinx:mode xilinx:name="create_mode"/>
+          </xilinx:componentRef>
+        </xilinx:subCoreRef>
+      </spirit:vendorExtensions>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_xpgui_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>xgui/Frame_Arbiter_v1_0.tcl</spirit:name>
+        <spirit:fileType>tclSource</spirit:fileType>
+        <spirit:userFileType>CHECKSUM_d78a23cc</spirit:userFileType>
+        <spirit:userFileType>XGUI_VERSION_2</spirit:userFileType>
+      </spirit:file>
+    </spirit:fileSet>
+  </spirit:fileSets>
+  <spirit:description>Frame_Arbiter_v1_0</spirit:description>
+  <spirit:parameters>
+    <spirit:parameter>
+      <spirit:name>Thres</spirit:name>
+      <spirit:displayName>Thres</spirit:displayName>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.Thres">16</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>Component_Name</spirit:name>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.Component_Name" spirit:order="1">width_convert_v1_0</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>channel_num</spirit:name>
+      <spirit:displayName>Channel Num</spirit:displayName>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.channel_num">5</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>data_W</spirit:name>
+      <spirit:displayName>Data W</spirit:displayName>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.data_W">256</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>tdest_W</spirit:name>
+      <spirit:displayName>Tdest W</spirit:displayName>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.tdest_W">4</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>output_W</spirit:name>
+      <spirit:displayName>Output W</spirit:displayName>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.output_W">8</spirit:value>
+    </spirit:parameter>
+  </spirit:parameters>
+  <spirit:vendorExtensions>
+    <xilinx:coreExtensions>
+      <xilinx:supportedFamilies>
+        <xilinx:family xilinx:lifeCycle="Production">virtex7</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">qvirtex7</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">versal</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">kintex7</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">kintex7l</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">qkintex7</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">qkintex7l</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">akintex7</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">artix7</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">artix7l</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">aartix7</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">qartix7</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">zynq</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">qzynq</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">azynq</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">spartan7</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">aspartan7</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">virtexu</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">zynquplus</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">virtexuplus</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">virtexuplusHBM</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">virtexuplus58g</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">kintexuplus</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">kintexu</xilinx:family>
+      </xilinx:supportedFamilies>
+      <xilinx:taxonomies>
+        <xilinx:taxonomy>/UserIP</xilinx:taxonomy>
+      </xilinx:taxonomies>
+      <xilinx:displayName>Frame_Arbiter_v1_0</xilinx:displayName>
+      <xilinx:definitionSource>package_project</xilinx:definitionSource>
+      <xilinx:xpmLibraries>
+        <xilinx:xpmLibrary>XPM_CDC</xilinx:xpmLibrary>
+        <xilinx:xpmLibrary>XPM_MEMORY</xilinx:xpmLibrary>
+      </xilinx:xpmLibraries>
+      <xilinx:coreRevision>33</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2026-01-19T06:40:39Z</xilinx:coreCreationDateTime>
+      <xilinx:tags>
+        <xilinx:tag xilinx:name="nopcore"/>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3ac8f7c7_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@72057a67_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@538bb717_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@77fe44bb_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@59cca532_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5dd0db4e_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1d53f1ba_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@312cb062_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4ee22d1_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@34f153ca_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@35381800_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@238d6657_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1ec1428e_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@448b8350_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@618fc0f8_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@24fe69fb_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4480f6df_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@63e34153_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@25cb21d0_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@494554a7_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@44c9e0_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@55bee49b_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@26256ff4_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7c18fcea_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@f0899d5_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4d2af74a_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@458744db_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@31a89d19_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@60e8ab79_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@32185919_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1aa8822d_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@aba621_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@ad2fcda_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5d804027_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@509cc7c2_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2ec14632_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@68ce8bfa_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@32e7d652_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@364e55da_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@112e0768_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7faf828b_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5873804f_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@207a8191_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@56b4c5f1_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7cb96694_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@472d119_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@17314b96_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@b8a3cd0_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7d618882_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7455a8ab_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@61526dbd_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@717c7dab_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@61b957c5_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@692d3650_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1c22000e_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@56032810_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@8bfbec0_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4ee73a36_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@40413c61_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3602ca43_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3cfe7af5_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6954afad_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1431fa87_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@25cca3c7_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7a722eee_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@23303dab_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@420c7a22_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6e94a374_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3e3fc0a0_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3362ee65_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6994e61_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@287afed5_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@28782f7c_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@642e1add_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4dabb288_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4c441b96_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@16176b34_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7fd22459_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2c83d09f_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6e047ce8_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2dcc9d78_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@96d06e3_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6bcac3ce_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@ffd9405_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1e221e2f_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1b189f8_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3c7836dc_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1adc114c_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1152e716_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3541f6da_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@38c6ecce_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@16a73be2_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@9592da2_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@229c399d_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6ab419db_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@33cd9cd_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4d20c3fd_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@37588a1a_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@31faa8b4_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@43ae9ad3_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@25268a51_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@68cb4e08_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2c3779ac_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@54b168e4_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6f6540c8_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1102582f_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@143d1e22_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@16a739db_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@484d63fe_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@72ae7775_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6b323ed5_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@30b5363b_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@409cc24f_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@946a12a_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@57a9d7fa_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2e628e70_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7704831e_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6c42e3f6_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2e4c1d9d_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6bfcc23a_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@50693e70_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@24bba32a_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4598624d_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@44589eed_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@77ac0626_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@683326ea_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2901f3b8_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4b644eb5_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@dc1e373_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6b312adb_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6ccb8c90_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6be3be85_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1d56a0b7_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2ed5bcfb_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@ba5e319_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@797def81_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@50dff54b_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4424fce3_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@45ec2c7a_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5df2345e_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4c8fba77_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@26c55a46_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3ef29c93_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1bd561b3_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5c9f9636_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@39b2a06d_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2969b1e8_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1e0fdbe3_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@13be236e_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4d3bcb_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@d32b9ac_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3a23b34e_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@686c4bf8_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4c36d88a_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2b0dd8f5_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6a3ecabb_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@a73179f_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7f561d95_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@15ccb750_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@26ba0378_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5528ab12_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@523face3_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@469a63e4_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6229a36e_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@26490e6_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5e9e1a1d_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@94acfc1_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@473dfafa_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@fe8b621_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7cc5d4c_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4ccc2773_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@63ec42a6_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@a4180d8_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7849a0f4_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@787fae39_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@434c5ba8_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@47cc2952_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3749f8e6_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3c8c8aa1_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@76f4b02_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1249b438_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@11af4176_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@302640bd_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7b789e53_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@493b1db8_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4137b52b_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@171fdc05_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5b6144be_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4ed26c1d_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6df677ce_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7d40e7d9_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@235d93c_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2fc367bb_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5c62a3c5_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3c75bc81_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5df54924_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4df590e9_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@185dd457_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@79b9c3a2_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6828af02_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@654ade7e_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@577425d7_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@757884e0_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@d8f80bf_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6de3d194_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@347a4402_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@434aece2_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@36e0275a_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@13646bc3_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@43de51f5_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@58fc468d_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@30622086_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@78ff4bab_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5b476187_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5276dda2_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@18ccf043_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@34a5a04e_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@ec9150e_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@31be7321_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5915c99b_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@19198b92_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@58a7cbaa_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7850e46c_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@789672f4_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5cbd4cad_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@39292728_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5b6f076c_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2dc8e83d_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@e573308_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3e40b350_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@8ef9809_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@72be6e8a_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@53fcb1f5_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@55ef181_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@64ad96f0_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3d9a17ae_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6ac91bb1_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6410fd87_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2cc97cdc_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@144ea6a1_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7398217b_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@b567d4a_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@627eee1f_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5b68f823_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2cded0d_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@74d7bebc_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1f8714ac_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4bf1c360_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@77d48252_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@71bdc37e_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@9543a8c_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5de1c1b_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@65aeeda7_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4be63d12_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@340e5234_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2c4e31f_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5480961_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@21bd2b04_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7115724f_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7be6773e_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@49ca16d3_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3523ac7f_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@31ddb37c_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@603bb5d9_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6087848e_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@13c4b8c6_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@39e3bfab_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6ce0793f_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6517d406_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1785d2bc_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4c6412fc_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7ee6e2fe_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@168b61d9_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5c0dfbd7_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@52bfbf7a_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1d42b169_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@c136fdf_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@79c80225_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@401df41f_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7a5c2f8c_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@566ee785_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@705f5455_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@217a2ed7_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@42b5b73a_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3381f0f_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@826a15b_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@756c2033_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@661e1125_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@532eec31_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@16165f77_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@65b3fca1_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6226608d_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@d7cdeb4_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@783b377f_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@33421010_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@20f8adbf_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@19f278d3_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@69293bdd_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6274fb9b_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7236f2e6_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@72f453d0_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1a3d3b35_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@441a49a4_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6892e092_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@64facf02_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6538e7d9_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7be2b271_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2a492246_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@601c6522_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4a6b5888_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@221cb4e9_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2ab6888a_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@51cb19b0_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7cce9ea8_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@41721c3_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3953c18e_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@587a0ffc_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6d9bd2dd_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@650b46a9_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4c83cc03_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@423ea066_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5faa10fa_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4a2643a6_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@19d562a9_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@43a448dc_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@28802710_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4ff66647_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5f680d42_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@79e33568_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2563c8f8_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@63979783_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@627d3a95_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@153c23bf_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7ec738d_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6e3b32a1_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@54a7a878_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4367fd2e_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3f21c40f_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@381a9532_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@b589990_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2e1d912b_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7a141819_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@c50ba41_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4f86d82b_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3964ab6f_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6b53d9b_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6ce50ba9_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@347671b9_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2d8c2a4d_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@48f18fae_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7ed71aec_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@41720b87_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6ac25b74_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@337705d1_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@293c15d9_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2b9db743_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3e3fff2f_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@159a8632_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@20db9677_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@66813d06_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@55699be9_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@388d2d50_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2c204aa7_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7f7be8c5_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6158575d_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6a67dae_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7f83041f_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5369698f_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7ef46d9a_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@53e59292_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5e3034c2_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7b11ab96_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@78458372_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5ad1d8d1_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3f94f457_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6611b239_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7223d00_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3b37173a_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@a0c5793_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3817deef_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@77fcb935_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3bebe874_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@d6bcfaa_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4a16c420_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1bde5427_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3f620304_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@19711a59_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@47efdea2_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@34baa501_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1e4f7bdb_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3a2cc226_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1bab7754_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@553b4ae2_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3600f7f_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6a811abd_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@50a81c1e_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@33eb6de4_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@41799c3d_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1d59664d_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3d874df0_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5c57d760_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5f4afae4_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4331fb3c_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@a5448ac_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@487843da_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@69f0b761_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4f7cd831_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@20ba5fdc_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4e15beb2_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@d928619_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4e4e7fee_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4536381c_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2c2dbd82_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6d1b0e4b_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6e1aef74_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6417058a_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@312e61b4_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@728880f4_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@712fc71a_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6934d87f_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7edaa0a6_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3c5f736a_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1d9cf2ef_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4bfffea1_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@79b8dc23_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@60e4cdee_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@38a2ee06_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@24076eb1_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@62afb3fa_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3168a007_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2f160d3f_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@526a7d57_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@28c0eae8_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@13f998f5_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@124cd3b9_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5b4a8b89_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6490740d_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@51479bca_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4f9c8384_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@48b936fa_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5807a60c_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@39dd9745_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@56b4ad5c_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1704f068_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5e2b1ee5_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@b3d33a2_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@650cfb56_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@26c4c70_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@228526a5_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@74cdecef_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7bda9a7b_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2ae016c7_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4f7850bb_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@373d0f69_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@62c91358_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@75495112_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@398fca06_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@8be483d_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@65b2c99b_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@393a7d0f_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3a50efe7_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@79eb5c84_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2fe00700_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@438efb52_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4576f7ce_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3eda431d_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@661cb8a3_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@69ec15e_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@63a0b57e_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@29883a4_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@77e5649a_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6bc796ae_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@a3fd322_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@39c9ac9e_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6459913b_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@413364a4_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@193e3e22_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@77b9a3b6_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4f598def_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@31343f3c_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@41a11a4e_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@712450fb_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4e0cddcf_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@244e06eb_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3739200f_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6b20cf99_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@11093bf7_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7b6b58d6_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@607cfc34_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@30a8c0bd_ARCHIVE_LOCATION">d:/FPGA_prj/ip_repo/Frame_arbiter/ip</xilinx:tag>
+      </xilinx:tags>
+    </xilinx:coreExtensions>
+    <xilinx:packagingInfo>
+      <xilinx:xilinxVersion>2020.2</xilinx:xilinxVersion>
+      <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="1a695975"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="db167ac7"/>
+      <xilinx:checksum xilinx:scope="ports" xilinx:value="69da5851"/>
+      <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="72cb980e"/>
+      <xilinx:checksum xilinx:scope="parameters" xilinx:value="deaa138a"/>
+    </xilinx:packagingInfo>
+  </spirit:vendorExtensions>
+</spirit:component>

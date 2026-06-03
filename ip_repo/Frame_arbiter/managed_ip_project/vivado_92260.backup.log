@@ -1,0 +1,165 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Sun Jan 11 10:30:41 2026
+# Process ID: 92260
+# Current directory: D:/FPGA_prj/ip_repo/Frame_arbiter/managed_ip_project
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent90888 D:\FPGA_prj\ip_repo\Frame_arbiter\managed_ip_project\managed_ip_project.xpr
+# Log file: D:/FPGA_prj/ip_repo/Frame_arbiter/managed_ip_project/vivado.log
+# Journal file: D:/FPGA_prj/ip_repo/Frame_arbiter/managed_ip_project\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/FPGA_prj/ip_repo/Frame_arbiter/managed_ip_project/managed_ip_project.xpr
+WARNING: [filemgmt 56-3] Default IP Output Path : Could not find the directory 'D:/FPGA_prj/ip_repo/Frame_arbiter/managed_ip_project/managed_ip_project.gen/sources_1'.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2020.2/data/ip'.
+ipx::infer_core -vendor xilinx.com -library user -taxonomy /UserIP D:/FPGA_prj/ip_repo/Frame_arbiter/ip
+WARNING: [Ipptcl 7-1467] The compile order has been set manually. This prevents the packager from updating                 it if necessary. If errors related to compile order occur, try enabling automatic                 reordering, or calling package_project with the -force_update_compile_order option
+INFO: [IP_Flow 19-5107] Inferred bus interface 'rst_n' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'clk' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-4728] Bus Interface 'rst_n': Added interface parameter 'POLARITY' with value 'ACTIVE_LOW'.
+WARNING: [IP_Flow 19-3157] Bus Interface 'rst_n': Bus parameter POLARITY is ACTIVE_LOW but port 'rst_n' is not *resetn - please double check the POLARITY setting.
+WARNING: [IP_Flow 19-5661] Bus Interface 'clk' does not have any bus interfaces associated with it.
+INFO: [IP_Flow 19-2181] Payment Required is not set for this core.
+INFO: [IP_Flow 19-2187] The Product Guide file is missing.
+WARNING: [IP_Flow 19-3157] Bus Interface 'rst_n': Bus parameter POLARITY is ACTIVE_LOW but port 'rst_n' is not *resetn - please double check the POLARITY setting.
+WARNING: [IP_Flow 19-5661] Bus Interface 'clk' does not have any bus interfaces associated with it.
+INFO: [IP_Flow 19-2181] Payment Required is not set for this core.
+INFO: [IP_Flow 19-2187] The Product Guide file is missing.
+ipx::edit_ip_in_project -upgrade true -name edit_ip_project -directory D:/FPGA_prj/ip_repo/Frame_arbiter/managed_ip_project/managed_ip_project.tmp d:/FPGA_prj/ip_repo/Frame_arbiter/ip/component.xml
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2020.2/data/ip'.
+INFO: [IP_Flow 19-795] Syncing license key meta-data
+ipx::current_core d:/FPGA_prj/ip_repo/Frame_arbiter/ip/component.xml
+update_compile_order -fileset sources_1
+create_ip -name fifo_generator -vendor xilinx.com -library ip -version 13.2 -module_name fifo_generator_0 -dir d:/FPGA_prj/ip_repo/Frame_arbiter/ip/src
+set_property -dict [list CONFIG.Fifo_Implementation {Common_Clock_Block_RAM} CONFIG.Performance_Options {First_Word_Fall_Through} CONFIG.Input_Data_Width {256} CONFIG.Input_Depth {2048} CONFIG.Output_Data_Width {256} CONFIG.Output_Depth {2048} CONFIG.Use_Extra_Logic {true} CONFIG.Data_Count_Width {12} CONFIG.Write_Data_Count_Width {12} CONFIG.Read_Data_Count_Width {12} CONFIG.Programmable_Full_Type {Single_Programmable_Full_Threshold_Constant} CONFIG.Full_Threshold_Assert_Value {1023} CONFIG.Full_Threshold_Negate_Value {1022} CONFIG.Empty_Threshold_Assert_Value {4} CONFIG.Empty_Threshold_Negate_Value {5}] [get_ips fifo_generator_0]
+generate_target {instantiation_template} [get_files d:/FPGA_prj/ip_repo/Frame_arbiter/ip/src/fifo_generator_0/fifo_generator_0.xci]
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'fifo_generator_0'...
+generate_target all [get_files  d:/FPGA_prj/ip_repo/Frame_arbiter/ip/src/fifo_generator_0/fifo_generator_0.xci]
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'fifo_generator_0'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'fifo_generator_0'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'fifo_generator_0'...
+catch { config_ip_cache -export [get_ips -all fifo_generator_0] }
+export_ip_user_files -of_objects [get_files d:/FPGA_prj/ip_repo/Frame_arbiter/ip/src/fifo_generator_0/fifo_generator_0.xci] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] d:/FPGA_prj/ip_repo/Frame_arbiter/ip/src/fifo_generator_0/fifo_generator_0.xci]
+launch_runs fifo_generator_0_synth_1 -jobs 16
+[Sun Jan 11 10:32:31 2026] Launched fifo_generator_0_synth_1...
+Run output will be captured here: d:/fpga_prj/ip_repo/frame_arbiter/managed_ip_project/managed_ip_project.tmp/edit_ip_project.runs/fifo_generator_0_synth_1/runme.log
+export_simulation -of_objects [get_files d:/FPGA_prj/ip_repo/Frame_arbiter/ip/src/fifo_generator_0/fifo_generator_0.xci] -directory d:/fpga_prj/ip_repo/frame_arbiter/managed_ip_project/managed_ip_project.tmp/edit_ip_project.ip_user_files/sim_scripts -ip_user_files_dir d:/fpga_prj/ip_repo/frame_arbiter/managed_ip_project/managed_ip_project.tmp/edit_ip_project.ip_user_files -ipstatic_source_dir d:/fpga_prj/ip_repo/frame_arbiter/managed_ip_project/managed_ip_project.tmp/edit_ip_project.ip_user_files/ipstatic -lib_map_path [list {modelsim=d:/fpga_prj/ip_repo/frame_arbiter/managed_ip_project/managed_ip_project.tmp/edit_ip_project.cache/compile_simlib/modelsim} {questa=d:/fpga_prj/ip_repo/frame_arbiter/managed_ip_project/managed_ip_project.tmp/edit_ip_project.cache/compile_simlib/questa} {riviera=d:/fpga_prj/ip_repo/frame_arbiter/managed_ip_project/managed_ip_project.tmp/edit_ip_project.cache/compile_simlib/riviera} {activehdl=d:/fpga_prj/ip_repo/frame_arbiter/managed_ip_project/managed_ip_project.tmp/edit_ip_project.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+export_ip_user_files -of_objects  [get_files d:/FPGA_prj/ip_repo/Frame_arbiter/ip/src/fifo_generator_0/fifo_generator_0.xci] -no_script -reset -force -quiet
+remove_files  -fileset fifo_generator_0 d:/FPGA_prj/ip_repo/Frame_arbiter/ip/src/fifo_generator_0/fifo_generator_0.xci
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory d:/fpga_prj/ip_repo/frame_arbiter/managed_ip_project/managed_ip_project.tmp/edit_ip_project.runs/fifo_generator_0_synth_1
+
+INFO: [Project 1-386] Moving file 'd:/FPGA_prj/ip_repo/Frame_arbiter/ip/src/fifo_generator_0/fifo_generator_0.xci' from fileset 'fifo_generator_0' to fileset 'sources_1'.
+create_ip -name fifo_generator -vendor xilinx.com -library ip -version 13.2 -module_name fifo_MM2S -dir d:/FPGA_prj/ip_repo/Frame_arbiter/ip/src
+set_property -dict [list CONFIG.Component_Name {fifo_MM2S} CONFIG.Fifo_Implementation {Common_Clock_Block_RAM} CONFIG.Performance_Options {First_Word_Fall_Through} CONFIG.Input_Data_Width {256} CONFIG.Input_Depth {1024} CONFIG.Output_Data_Width {256} CONFIG.Output_Depth {1024} CONFIG.Almost_Full_Flag {true} CONFIG.Use_Extra_Logic {true} CONFIG.Data_Count_Width {11} CONFIG.Write_Data_Count_Width {11} CONFIG.Read_Data_Count_Width {11} CONFIG.Programmable_Full_Type {No_Programmable_Full_Threshold} CONFIG.Full_Threshold_Assert_Value {1023} CONFIG.Full_Threshold_Negate_Value {1022} CONFIG.Empty_Threshold_Assert_Value {4} CONFIG.Empty_Threshold_Negate_Value {5}] [get_ips fifo_MM2S]
+WARNING: [Vivado 12-3523] Attempt to change 'Component_Name' from 'fifo_MM2S' to 'fifo_MM2S' is not allowed and is ignored.
+generate_target {instantiation_template} [get_files d:/FPGA_prj/ip_repo/Frame_arbiter/ip/src/fifo_MM2S/fifo_MM2S.xci]
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'fifo_MM2S'...
+update_compile_order -fileset sources_1
+generate_target all [get_files  d:/FPGA_prj/ip_repo/Frame_arbiter/ip/src/fifo_MM2S/fifo_MM2S.xci]
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'fifo_MM2S'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'fifo_MM2S'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'fifo_MM2S'...
+catch { config_ip_cache -export [get_ips -all fifo_MM2S] }
+export_ip_user_files -of_objects [get_files d:/FPGA_prj/ip_repo/Frame_arbiter/ip/src/fifo_MM2S/fifo_MM2S.xci] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] d:/FPGA_prj/ip_repo/Frame_arbiter/ip/src/fifo_MM2S/fifo_MM2S.xci]
+launch_runs fifo_MM2S_synth_1 -jobs 16
+[Sun Jan 11 10:34:37 2026] Launched fifo_MM2S_synth_1...
+Run output will be captured here: d:/fpga_prj/ip_repo/frame_arbiter/managed_ip_project/managed_ip_project.tmp/edit_ip_project.runs/fifo_MM2S_synth_1/runme.log
+export_simulation -of_objects [get_files d:/FPGA_prj/ip_repo/Frame_arbiter/ip/src/fifo_MM2S/fifo_MM2S.xci] -directory d:/fpga_prj/ip_repo/frame_arbiter/managed_ip_project/managed_ip_project.tmp/edit_ip_project.ip_user_files/sim_scripts -ip_user_files_dir d:/fpga_prj/ip_repo/frame_arbiter/managed_ip_project/managed_ip_project.tmp/edit_ip_project.ip_user_files -ipstatic_source_dir d:/fpga_prj/ip_repo/frame_arbiter/managed_ip_project/managed_ip_project.tmp/edit_ip_project.ip_user_files/ipstatic -lib_map_path [list {modelsim=d:/fpga_prj/ip_repo/frame_arbiter/managed_ip_project/managed_ip_project.tmp/edit_ip_project.cache/compile_simlib/modelsim} {questa=d:/fpga_prj/ip_repo/frame_arbiter/managed_ip_project/managed_ip_project.tmp/edit_ip_project.cache/compile_simlib/questa} {riviera=d:/fpga_prj/ip_repo/frame_arbiter/managed_ip_project/managed_ip_project.tmp/edit_ip_project.cache/compile_simlib/riviera} {activehdl=d:/fpga_prj/ip_repo/frame_arbiter/managed_ip_project/managed_ip_project.tmp/edit_ip_project.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+ipx::merge_project_changes files [ipx::current_core]
+WARNING: [IP_Flow 19-3833] Unreferenced file from the top module is not packaged: 'd:/FPGA_prj/ip_repo/Frame_arbiter/ip/Frame_Arbiter.v'.
+WARNING: [IP_Flow 19-5226] Project source file 'd:/FPGA_prj/ip_repo/Frame_arbiter/ip/component.xml' ignored by IP packager.
+WARNING: [IP_Flow 19-5109] File Group 'xilinx_anylanguagesynthesis (Synthesis)': File 'd:/FPGA_prj/ip_repo/Frame_arbiter/ip/Frame_Arbiter.v' does not exist in the project sources. It has been removed from the packaged IP. If still required, please add this file to the project, merge sources and re-package.
+WARNING: [IP_Flow 19-5109] File Group 'xilinx_anylanguagebehavioralsimulation (Simulation)': File 'd:/FPGA_prj/ip_repo/Frame_arbiter/ip/Frame_Arbiter.v' does not exist in the project sources. It has been removed from the packaged IP. If still required, please add this file to the project, merge sources and re-package.
+launch_runs synth_1 -jobs 16
+[Sun Jan 11 10:35:54 2026] Launched synth_1...
+Run output will be captured here: d:/fpga_prj/ip_repo/frame_arbiter/managed_ip_project/managed_ip_project.tmp/edit_ip_project.runs/synth_1/runme.log
+set_property top Frame_Arbiter [current_fileset]
+update_compile_order -fileset sources_1
+ipx::merge_project_changes files [ipx::current_core]
+WARNING: [IP_Flow 19-5226] Project source file 'd:/FPGA_prj/ip_repo/Frame_arbiter/ip/component.xml' ignored by IP packager.
+WARNING: [IP_Flow 19-5898] Updating the required XPM macros from '' to 'XPM_CDC,XPM_MEMORY'
+ipx::add_file_group -type synthesis {} [ipx::current_core]
+ipx::remove_file_group xilinx_anylanguagesynthesis_1 [ipx::current_core]
+ipx::add_file D:/FPGA_prj/ip_repo/Frame_arbiter/ip/src/fifo_MM2S/fifo_MM2S.xci [ipx::get_file_groups xilinx_anylanguagesynthesis -of_objects [ipx::current_core]]
+set_property type xci [ipx::get_files src/fifo_MM2S/fifo_MM2S.xci -of_objects [ipx::get_file_groups xilinx_anylanguagesynthesis -of_objects [ipx::current_core]]]
+ipx::add_file D:/FPGA_prj/ip_repo/Frame_arbiter/ip/src/fifo_MM2S/fifo_MM2S.xci [ipx::get_file_groups xilinx_anylanguagebehavioralsimulation -of_objects [ipx::current_core]]
+set_property type xci [ipx::get_files src/fifo_MM2S/fifo_MM2S.xci -of_objects [ipx::get_file_groups xilinx_anylanguagebehavioralsimulation -of_objects [ipx::current_core]]]
+ipx::merge_project_changes hdl_parameters [ipx::current_core]
+WARNING: [IP_Flow 19-5226] Project source file 'd:/FPGA_prj/ip_repo/Frame_arbiter/ip/component.xml' ignored by IP packager.
+INFO: [Ipptcl 7-560]  
+INFO: [Ipptcl 7-560]  
+ipgui::add_param -name {channel_num} -component [ipx::current_core] -display_name {Channel Num} -show_label {true} -show_range {true} -widget {}
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified .Providing a default widget
+ipgui::add_param -name {data_W} -component [ipx::current_core] -display_name {Data W} -show_label {true} -show_range {true} -widget {}
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified .Providing a default widget
+ipgui::add_param -name {tdest_W} -component [ipx::current_core] -display_name {Tdest W} -show_label {true} -show_range {true} -widget {}
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified .Providing a default widget
+ipgui::add_param -name {output_W} -component [ipx::current_core] -display_name {Output W} -show_label {true} -show_range {true} -widget {}
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified .Providing a default widget
+ipx::add_bus_interface M [ipx::current_core]
+set_property abstraction_type_vlnv xilinx.com:interface:aximm_rtl:1.0 [ipx::get_bus_interfaces M -of_objects [ipx::current_core]]
+set_property bus_type_vlnv xilinx.com:interface:aximm:1.0 [ipx::get_bus_interfaces M -of_objects [ipx::current_core]]
+set_property interface_mode master [ipx::get_bus_interfaces M -of_objects [ipx::current_core]]
+ipx::add_bus_parameter NUM_READ_OUTSTANDING [ipx::get_bus_interfaces M -of_objects [ipx::current_core]]
+ipx::add_bus_parameter NUM_WRITE_OUTSTANDING [ipx::get_bus_interfaces M -of_objects [ipx::current_core]]
+set_property name {} [ipx::get_bus_interfaces M -of_objects [ipx::current_core]]
+ipx::remove_bus_interface {} [ipx::current_core]
+ipx::add_bus_interface MM2S_s [ipx::current_core]
+set_property abstraction_type_vlnv xilinx.com:interface:aximm_rtl:1.0 [ipx::get_bus_interfaces MM2S_s -of_objects [ipx::current_core]]
+set_property bus_type_vlnv xilinx.com:interface:aximm:1.0 [ipx::get_bus_interfaces MM2S_s -of_objects [ipx::current_core]]
+ipx::add_bus_parameter NUM_READ_OUTSTANDING [ipx::get_bus_interfaces MM2S_s -of_objects [ipx::current_core]]
+ipx::add_bus_parameter NUM_WRITE_OUTSTANDING [ipx::get_bus_interfaces MM2S_s -of_objects [ipx::current_core]]
+set_property abstraction_type_vlnv xilinx.com:interface:axis_rtl:1.0 [ipx::get_bus_interfaces MM2S_s -of_objects [ipx::current_core]]
+set_property bus_type_vlnv xilinx.com:interface:axis:1.0 [ipx::get_bus_interfaces MM2S_s -of_objects [ipx::current_core]]
+ipx::add_port_map TVALID [ipx::get_bus_interfaces MM2S_s -of_objects [ipx::current_core]]
+set_property physical_name MM2S_tvalid [ipx::get_port_maps TVALID -of_objects [ipx::get_bus_interfaces MM2S_s -of_objects [ipx::current_core]]]
+ipx::add_port_map TDATA [ipx::get_bus_interfaces MM2S_s -of_objects [ipx::current_core]]
+set_property physical_name MM2S_tdata [ipx::get_port_maps TDATA -of_objects [ipx::get_bus_interfaces MM2S_s -of_objects [ipx::current_core]]]
+ipx::add_port_map TDEST [ipx::get_bus_interfaces MM2S_s -of_objects [ipx::current_core]]
+set_property physical_name MM2S_tdest [ipx::get_port_maps TDEST -of_objects [ipx::get_bus_interfaces MM2S_s -of_objects [ipx::current_core]]]
+ipx::add_port_map TREADY [ipx::get_bus_interfaces MM2S_s -of_objects [ipx::current_core]]
+set_property physical_name MM2S_tready [ipx::get_port_maps TREADY -of_objects [ipx::get_bus_interfaces MM2S_s -of_objects [ipx::current_core]]]
+ipgui::move_param -component [ipx::current_core] -order 2 [ipgui::get_guiparamspec -name "channel_num" -component [ipx::current_core]]
+ipgui::remove_param -component [ipx::current_core] [ipgui::get_guiparamspec -name "channel_num" -component [ipx::current_core]]
+ipgui::add_param -name {channel_num} -component [ipx::current_core]
+ipgui::move_param -component [ipx::current_core] -order 0 [ipgui::get_guiparamspec -name "data_W" -component [ipx::current_core]] -parent [ipgui::get_pagespec -name "Page 0" -component [ipx::current_core]]
+ipgui::move_param -component [ipx::current_core] -order 1 [ipgui::get_guiparamspec -name "tdest_W" -component [ipx::current_core]] -parent [ipgui::get_pagespec -name "Page 0" -component [ipx::current_core]]
+ipgui::move_param -component [ipx::current_core] -order 2 [ipgui::get_guiparamspec -name "output_W" -component [ipx::current_core]] -parent [ipgui::get_pagespec -name "Page 0" -component [ipx::current_core]]
+ipgui::move_param -component [ipx::current_core] -order 3 [ipgui::get_guiparamspec -name "Thres" -component [ipx::current_core]] -parent [ipgui::get_canvasspec -component [ipx::current_core]]
+ipgui::move_param -component [ipx::current_core] -order 3 [ipgui::get_guiparamspec -name "channel_num" -component [ipx::current_core]] -parent [ipgui::get_canvasspec -component [ipx::current_core]]
+ipgui::move_param -component [ipx::current_core] -order 3 [ipgui::get_guiparamspec -name "Thres" -component [ipx::current_core]] -parent [ipgui::get_canvasspec -component [ipx::current_core]]
+ipgui::move_param -component [ipx::current_core] -order 2 [ipgui::get_guiparamspec -name "Thres" -component [ipx::current_core]] -parent [ipgui::get_pagespec -name "Page 0" -component [ipx::current_core]]
+ipgui::move_param -component [ipx::current_core] -order 1 [ipgui::get_guiparamspec -name "channel_num" -component [ipx::current_core]] -parent [ipgui::get_pagespec -name "Page 0" -component [ipx::current_core]]
+ipgui::move_param -component [ipx::current_core] -order 0 [ipgui::get_guiparamspec -name "tdest_W" -component [ipx::current_core]] -parent [ipgui::get_pagespec -name "Page 0" -component [ipx::current_core]]
+ipgui::move_param -component [ipx::current_core] -order 1 [ipgui::get_guiparamspec -name "output_W" -component [ipx::current_core]] -parent [ipgui::get_pagespec -name "Page 0" -component [ipx::current_core]]
+ipgui::move_param -component [ipx::current_core] -order 0 [ipgui::get_guiparamspec -name "channel_num" -component [ipx::current_core]] -parent [ipgui::get_pagespec -name "Page 0" -component [ipx::current_core]]
+ipgui::move_param -component [ipx::current_core] -order 4 [ipgui::get_guiparamspec -name "tdest_W" -component [ipx::current_core]] -parent [ipgui::get_pagespec -name "Page 0" -component [ipx::current_core]]
+ipx::update_checksums [ipx::current_core]
+ipx::save_core [ipx::current_core]
+set_property core_revision 2 [ipx::current_core]
+ipx::update_source_project_archive -component [ipx::current_core]
+ipx::create_xgui_files [ipx::current_core]
+ipx::update_checksums [ipx::current_core]
+ipx::check_integrity [ipx::current_core]
+WARNING: [IP_Flow 19-3157] Bus Interface 'rst_n': Bus parameter POLARITY is ACTIVE_LOW but port 'rst_n' is not *resetn - please double check the POLARITY setting.
+WARNING: [IP_Flow 19-5661] Bus Interface 'clk' does not have any bus interfaces associated with it.
+WARNING: [IP_Flow 19-3158] Bus Interface 'MM2S_s': FREQ_HZ bus parameter missing from AXI interface when interface is not associated to a clock.
+INFO: [IP_Flow 19-2181] Payment Required is not set for this core.
+INFO: [IP_Flow 19-2187] The Product Guide file is missing.
+INFO: [Ipptcl 7-1486] check_integrity: Integrity check passed.
+ipx::save_core [ipx::current_core]
+ipx::move_temp_component_back -component [ipx::current_core]
+close_project -delete
+ERROR: [Project 1-161] Failed to remove the directory 'd:/fpga_prj/ip_repo/frame_arbiter/managed_ip_project/managed_ip_project.tmp/edit_ip_project.runs'. The directory might be in use by some other process.
+exit
+INFO: [Common 17-206] Exiting Vivado at Sun Jan 11 10:52:25 2026...
