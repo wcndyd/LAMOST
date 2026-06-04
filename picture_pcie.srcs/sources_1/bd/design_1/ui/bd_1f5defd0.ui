@@ -1,7 +1,7 @@
 {
    "ActiveEmotionalView":"Default View",
    "Default View_ScaleFactor":"0.866972",
-   "Default View_TopLeft":"732,231",
+   "Default View_TopLeft":"731,305",
    "ExpandedHierarchyInLayout":"",
    "guistr":"# # String gsaved with Nlview 7.0r6  2020-01-29 bk=1.5227 VDI=41 GEI=36 GUI=JA:10.0 non-TLS
 #  -string -flagsOSRD
@@ -47,21 +47,21 @@ preplace netloc result_tranfer_flag 1 3 4 1030 490 NJ 490 NJ 490 2460
 preplace netloc h2c_intr_0_trigger_out 1 4 3 N 280 NJ 280 2460
 preplace netloc h2c_intr_0_xdma_irq_req 1 1 4 340 130 NJ 130 NJ 130 1650
 preplace netloc result_tranfer_cnt 1 3 4 1020 20 NJ 20 NJ 20 2480
-preplace netloc axi_mcdma_0_M_AXIS_MM2S 1 6 1 2530 600n
-preplace netloc ps8_0_axi_periph_M00_AXI 1 5 1 2020 660n
-preplace netloc axi_interconnect_0_M00_AXI 1 3 5 990 10 NJ 10 NJ 10 NJ 10 2870
-preplace netloc axi_mcdma_0_M_AXI_MM2S 1 6 1 2490 600n
 preplace netloc zynq_ultra_ps_e_0_M_AXI_HPM0_LPD 1 4 1 1680 590n
+preplace netloc axi_mcdma_0_M_AXIS_MM2S 1 6 1 2530 600n
+preplace netloc axi_interconnect_0_M00_AXI 1 3 5 990 10 NJ 10 NJ 10 NJ 10 2870
+preplace netloc ps8_0_axi_periph_M00_AXI 1 5 1 2020 660n
 preplace netloc axi_smc_M00_AXI 1 3 1 960 480n
 preplace netloc xdma_0_M_AXI_LITE 1 2 1 660 210n
+preplace netloc axi_mcdma_0_M_AXI_SG 1 6 1 2490 290n
 preplace netloc axi_interconnect_1_M00_AXI 1 3 5 1010 190 NJ 190 2010J 200 NJ 200 2850
 preplace netloc ps8_0_axi_periph_M01_AXI 1 5 1 2000 90n
 preplace netloc CLK_IN_D_0_1 1 0 1 0J 220n
 preplace netloc xdma_0_M_AXI 1 2 1 670 190n
-preplace netloc axi_mcdma_0_M_AXI_SG 1 6 1 2490 290n
-preplace netloc xdma_0_pcie_mgt 1 2 6 640J 170 NJ 170 1660J 230 NJ 230 NJ 230 NJ
 preplace netloc result_tranfer_M_AXI_S2MM 1 6 1 2500 310n
+preplace netloc xdma_0_pcie_mgt 1 2 6 640J 170 NJ 170 1660J 230 NJ 230 NJ 230 NJ
 preplace netloc axi_smc_1_M00_AXI 1 3 1 960 250n
+preplace netloc axi_mcdma_0_M_AXI_MM2S 1 6 1 2490 600n
 levelinfo -pg 1 -20 160 490 820 1330 1840 2280 2700 2910
 pagesize -pg 1 -db -bbox -sgen -140 0 3030 1310
 "
