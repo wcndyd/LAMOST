@@ -37,8 +37,8 @@ add_files -norecurse $wrapper_file
 # 更新编译顺序, 将 wrapper 设为 Top
 update_compile_order -fileset sources_1
 
-launch_runs synth_1 -jobs 16
-
-launch_runs impl_1 -jobs 16
-
-launch_runs impl_1 -to_step write_bitstream -jobs 16
+# launch_runs synth_1 -jobs 16
+#
+# launch_runs impl_1 -jobs 16
+#
+# launch_runs impl_1 -to_step write_bitstream -jobs 16
