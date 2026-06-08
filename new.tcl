@@ -18,8 +18,12 @@ set src_dir "[file dirname [info script]]/picture_pcie.srcs/sources_1/hdl"
 
 if { [file exists $src_dir] } {
     puts "INFO: Adding RTL sources for $src_dir"
-    add_files -norecurse [glob $src_dir/*.v]
-    
+    import_files -norecurse [glob $src_dir/*.v]
+
+    update_compile_order -fileset sources_1
+
+    # 强制 Vivado 解析刚加入的 verilog 文件, 注册模块名以供 bd.tcl 的 can_resolve_reference 使用
+    set_property source_mgmt_mode All [current_project]
     update_compile_order -fileset sources_1
 } else {
     puts "EEROR:Cannot find RTL  directory $src_dir"

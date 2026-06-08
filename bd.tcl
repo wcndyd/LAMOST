@@ -25,8 +25,9 @@ set current_vivado_version [version -short]
 
 if { [string first $scripts_vivado_version $current_vivado_version] == -1 } {
    puts ""
-   common::send_gid_msg -ssname BD::TCL -id 2040 -severity "WARNING" "This script was generated using Vivado <$scripts_vivado_version> without IP versions in the create_bd_cell commands, but is now being run in <$current_vivado_version> of Vivado. There may have been major IP version changes between Vivado <$scripts_vivado_version> and <$current_vivado_version>, which could impact the parameter settings of the IPs."
+   catch {common::send_gid_msg -ssname BD::TCL -id 2041 -severity "ERROR" "This script was generated using Vivado <$scripts_vivado_version> and is being run in <$current_vivado_version> of Vivado. Please run the script in Vivado <$scripts_vivado_version> then open the design in Vivado <$current_vivado_version>. Upgrade the design by running \"Tools => Report => Report IP Status...\", then run write_bd_tcl to create an updated script."}
 
+   return 1
 }
 
 ################################################################
@@ -129,19 +130,19 @@ set bCheckIPsPassed 1
 set bCheckIPs 1
 if { $bCheckIPs == 1 } {
    set list_check_ips "\ 
-xilinx.com:user:Frame_Arbiter:*\
-xilinx.com:ip:axi_gpio:*\
-xilinx.com:ip:axi_mcdma:*\
-xilinx.com:ip:smartconnect:*\
-xilinx.com:user:h2c_intr:*\
-xilinx.com:user:lsp_debug:*\
-xilinx.com:ip:proc_sys_reset:*\
-xilinx.com:ip:util_ds_buf:*\
-xilinx.com:ip:xdma:*\
-xilinx.com:ip:zynq_ultra_ps_e:*\
-xilinx.com:ip:axi_datamover:*\
-xilinx.com:ip:fifo_generator:*\
-xilinx.com:ip:util_vector_logic:*\
+xilinx.com:user:Frame_Arbiter:1.0\
+xilinx.com:ip:axi_gpio:2.0\
+xilinx.com:ip:axi_mcdma:1.1\
+xilinx.com:ip:smartconnect:1.0\
+xilinx.com:user:h2c_intr:1.0\
+xilinx.com:user:lsp_debug:1.0\
+xilinx.com:ip:proc_sys_reset:5.0\
+xilinx.com:ip:util_ds_buf:2.1\
+xilinx.com:ip:xdma:4.1\
+xilinx.com:ip:zynq_ultra_ps_e:3.3\
+xilinx.com:ip:axi_datamover:5.1\
+xilinx.com:ip:fifo_generator:13.2\
+xilinx.com:ip:util_vector_logic:2.0\
 "
 
    set list_ips_missing ""
@@ -164,7 +165,7 @@ xilinx.com:ip:util_vector_logic:*\
 ##################################################################
 # CHECK Modules
 ##################################################################
-set bCheckModules 0
+set bCheckModules 1
 if { $bCheckModules == 1 } {
    set list_check_mods "\ 
 dma_s2mm_cmd\
@@ -245,7 +246,7 @@ proc create_hier_cell_result_tranfer { parentCell nameHier } {
   create_bd_pin -dir I -type rst rst_n
 
   # Create instance: axi_datamover_0, and set properties
-  set axi_datamover_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_datamover axi_datamover_0 ]
+  set axi_datamover_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_datamover:5.1 axi_datamover_0 ]
   set_property -dict [ list \
    CONFIG.c_dummy {1} \
    CONFIG.c_enable_mm2s {0} \
@@ -284,7 +285,7 @@ proc create_hier_cell_result_tranfer { parentCell nameHier } {
    }
   
   # Create instance: fifo_generator_0, and set properties
-  set fifo_generator_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:fifo_generator fifo_generator_0 ]
+  set fifo_generator_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:fifo_generator:13.2 fifo_generator_0 ]
   set_property -dict [ list \
    CONFIG.Data_Count {true} \
    CONFIG.Data_Count_Width {8} \
@@ -305,7 +306,7 @@ proc create_hier_cell_result_tranfer { parentCell nameHier } {
  ] $fifo_generator_0
 
   # Create instance: util_vector_logic_0, and set properties
-  set util_vector_logic_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic util_vector_logic_0 ]
+  set util_vector_logic_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 util_vector_logic_0 ]
   set_property -dict [ list \
    CONFIG.C_OPERATION {not} \
    CONFIG.C_SIZE {1} \
@@ -381,13 +382,13 @@ proc create_root_design { parentCell } {
   set pcie_rst_n [ create_bd_port -dir I -type rst pcie_rst_n ]
 
   # Create instance: Frame_Arbiter_0, and set properties
-  set Frame_Arbiter_0 [ create_bd_cell -type ip -vlnv xilinx.com:user:Frame_Arbiter Frame_Arbiter_0 ]
+  set Frame_Arbiter_0 [ create_bd_cell -type ip -vlnv xilinx.com:user:Frame_Arbiter:1.0 Frame_Arbiter_0 ]
   set_property -dict [ list \
    CONFIG.channel_num {10} \
  ] $Frame_Arbiter_0
 
   # Create instance: axi_gpio_0, and set properties
-  set axi_gpio_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_gpio axi_gpio_0 ]
+  set axi_gpio_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_gpio:2.0 axi_gpio_0 ]
   set_property -dict [ list \
    CONFIG.C_ALL_INPUTS {1} \
    CONFIG.C_ALL_INPUTS_2 {0} \
@@ -401,21 +402,21 @@ proc create_root_design { parentCell } {
  ] $axi_gpio_0
 
   # Create instance: axi_interconnect_0, and set properties
-  set axi_interconnect_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_interconnect axi_interconnect_0 ]
+  set axi_interconnect_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_interconnect:2.1 axi_interconnect_0 ]
   set_property -dict [ list \
    CONFIG.NUM_MI {1} \
    CONFIG.NUM_SI {1} \
  ] $axi_interconnect_0
 
   # Create instance: axi_interconnect_1, and set properties
-  set axi_interconnect_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_interconnect axi_interconnect_1 ]
+  set axi_interconnect_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_interconnect:2.1 axi_interconnect_1 ]
   set_property -dict [ list \
    CONFIG.NUM_MI {1} \
    CONFIG.NUM_SI {2} \
  ] $axi_interconnect_1
 
   # Create instance: axi_mcdma_0, and set properties
-  set axi_mcdma_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_mcdma axi_mcdma_0 ]
+  set axi_mcdma_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_mcdma:1.1 axi_mcdma_0 ]
   set_property -dict [ list \
    CONFIG.c_group1_mm2s {0000001111111111} \
    CONFIG.c_group1_s2mm {0000000000000000} \
@@ -428,22 +429,22 @@ proc create_root_design { parentCell } {
  ] $axi_mcdma_0
 
   # Create instance: axi_smc, and set properties
-  set axi_smc [ create_bd_cell -type ip -vlnv xilinx.com:ip:smartconnect axi_smc ]
+  set axi_smc [ create_bd_cell -type ip -vlnv xilinx.com:ip:smartconnect:1.0 axi_smc ]
   set_property -dict [ list \
    CONFIG.NUM_SI {1} \
  ] $axi_smc
 
   # Create instance: axi_smc_1, and set properties
-  set axi_smc_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:smartconnect axi_smc_1 ]
+  set axi_smc_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:smartconnect:1.0 axi_smc_1 ]
   set_property -dict [ list \
    CONFIG.NUM_SI {1} \
  ] $axi_smc_1
 
   # Create instance: h2c_intr_0, and set properties
-  set h2c_intr_0 [ create_bd_cell -type ip -vlnv xilinx.com:user:h2c_intr h2c_intr_0 ]
+  set h2c_intr_0 [ create_bd_cell -type ip -vlnv xilinx.com:user:h2c_intr:1.0 h2c_intr_0 ]
 
   # Create instance: lsp_debug_0, and set properties
-  set lsp_debug_0 [ create_bd_cell -type ip -vlnv xilinx.com:user:lsp_debug lsp_debug_0 ]
+  set lsp_debug_0 [ create_bd_cell -type ip -vlnv xilinx.com:user:lsp_debug:1.0 lsp_debug_0 ]
   set_property -dict [ list \
    CONFIG.Height {582} \
    CONFIG.Width {7680} \
@@ -451,10 +452,10 @@ proc create_root_design { parentCell } {
  ] $lsp_debug_0
 
   # Create instance: proc_sys_reset_0, and set properties
-  set proc_sys_reset_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:proc_sys_reset proc_sys_reset_0 ]
+  set proc_sys_reset_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:proc_sys_reset:5.0 proc_sys_reset_0 ]
 
   # Create instance: ps8_0_axi_periph, and set properties
-  set ps8_0_axi_periph [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_interconnect ps8_0_axi_periph ]
+  set ps8_0_axi_periph [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_interconnect:2.1 ps8_0_axi_periph ]
   set_property -dict [ list \
    CONFIG.NUM_MI {2} \
  ] $ps8_0_axi_periph
@@ -463,16 +464,16 @@ proc create_root_design { parentCell } {
   create_hier_cell_result_tranfer [current_bd_instance .] result_tranfer
 
   # Create instance: rst_ps8_0_99M, and set properties
-  set rst_ps8_0_99M [ create_bd_cell -type ip -vlnv xilinx.com:ip:proc_sys_reset rst_ps8_0_99M ]
+  set rst_ps8_0_99M [ create_bd_cell -type ip -vlnv xilinx.com:ip:proc_sys_reset:5.0 rst_ps8_0_99M ]
 
   # Create instance: util_ds_buf_0, and set properties
-  set util_ds_buf_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_ds_buf util_ds_buf_0 ]
+  set util_ds_buf_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_ds_buf:2.1 util_ds_buf_0 ]
   set_property -dict [ list \
    CONFIG.C_BUF_TYPE {IBUFDSGTE} \
  ] $util_ds_buf_0
 
   # Create instance: xdma_0, and set properties
-  set xdma_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xdma xdma_0 ]
+  set xdma_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xdma:4.1 xdma_0 ]
   set_property -dict [ list \
    CONFIG.PF0_DEVICE_ID_mqdma {9032} \
    CONFIG.PF2_DEVICE_ID_mqdma {9032} \
@@ -503,7 +504,7 @@ proc create_root_design { parentCell } {
  ] $xdma_0
 
   # Create instance: zynq_ultra_ps_e_0, and set properties
-  set zynq_ultra_ps_e_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:zynq_ultra_ps_e zynq_ultra_ps_e_0 ]
+  set zynq_ultra_ps_e_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:zynq_ultra_ps_e:3.3 zynq_ultra_ps_e_0 ]
   set_property -dict [ list \
    CONFIG.PSU_BANK_0_IO_STANDARD {LVCMOS18} \
    CONFIG.PSU_BANK_2_IO_STANDARD {LVCMOS18} \
