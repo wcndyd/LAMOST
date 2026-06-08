@@ -164,7 +164,7 @@ xilinx.com:ip:util_vector_logic:*\
 ##################################################################
 # CHECK Modules
 ##################################################################
-set bCheckModules 1
+set bCheckModules 0
 if { $bCheckModules == 1 } {
    set list_check_mods "\ 
 dma_s2mm_cmd\
