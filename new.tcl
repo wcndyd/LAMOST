@@ -1,5 +1,5 @@
 set project_name "picture_pcie"
-set project_dir [file dirname [info script]]
+set project_dir [file dirname [info script]]/build_prj
 set device_part "xczu4ev-sfvc784-2-i"
 set script_path [file dirname [info script]]
 
