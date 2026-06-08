@@ -22,6 +22,12 @@ if { [file exists $src_dir] } {
 
     update_compile_order -fileset sources_1
 
+    # 添加约束文件
+    set xdc_dir "[file dirname [info script]]/picture_pcie.srcs/constrs_1/new"
+    if { [file exists $xdc_dir] } {
+        import_files -norecurse [glob $xdc_dir/*.xdc]
+    }
+
     # 强制 Vivado 解析刚加入的 verilog 文件, 注册模块名以供 bd.tcl 的 can_resolve_reference 使用
     set_property source_mgmt_mode All [current_project]
     update_compile_order -fileset sources_1
